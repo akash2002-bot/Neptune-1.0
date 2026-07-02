@@ -75,10 +75,6 @@ if "param_values" not in st.session_state:
 
 # Sidebar navigation
 with st.sidebar:
-    st.image(
-        "https://img.icons8.com/fluency/96/000000/seed.png",
-        width=60,
-    )
     st.markdown(
         """
         <div style="text-align: center; margin-bottom: 20px;">
@@ -102,7 +98,7 @@ with st.sidebar:
             "About Research",
         ],
         icons=[
-            "house",
+            "house-fill",
             "search",
             "robot",
             "biomass",
@@ -145,32 +141,29 @@ with st.sidebar:
     )
 
 
-# ============================================================================
-# PAGE ROUTING
-# ============================================================================
-
+# Page routing
 page = st.session_state.page
 
 if page == "Home":
-    from pages import home
-    home.render()
+    from pages.home import render as home_render
+    home_render()
 
 elif page == "Find My Nematode":
-    from pages import find_my_nematode
-    find_my_nematode.render()
+    from pages.find_my_nematode import render as find_render
+    find_render()
 
 elif page == "NemaGPT":
-    from pages import nemagpt
-    nemagpt.render()
+    from pages.nemagpt import render as chat_render
+    chat_render()
 
 elif page == "Species Explorer":
-    from pages import species_explorer
-    species_explorer.render()
+    from pages.species_explorer import render as species_render
+    species_render()
 
 elif page == "Compare Species":
-    from pages import compare_species
-    compare_species.render()
+    from pages.compare_species import render as compare_render
+    compare_render()
 
 elif page == "About Research":
-    from pages import about_research
-    about_research.render()
+    from pages.about_research import render as about_render
+    about_render()
