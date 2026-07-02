@@ -12,30 +12,38 @@ import plotly.express as px
 
 
 def apply_custom_css():
-    """Apply custom CSS styling with NO rounded corners (flat design)."""
+    """Apply custom CSS with improved contrast and flat design."""
     st.markdown(
         """
         <style>
-        /* Global styles */
-        .main {
-            padding: 0 1rem;
-        }
-        .stApp {
-            background-color: #f8faf8;
+        /* Force dark text everywhere */
+        body, .main, .stApp, div, p, span, li, label, .stMarkdown, .stText, .stSelectbox, .stNumberInput {
+            color: #1a1a1a !important;
         }
 
-        /* Headers */
-        h1, h2, h3 {
+        /* Sidebar - dark text */
+        .css-1d391kg, .css-1d391kg p, .css-1d391kg div, .css-1d391kg span,
+        .css-1d391kg label, .css-1d391kg .stSelectbox, .css-1d391kg .stTextInput,
+        .stSidebar, .stSidebar p, .stSidebar div, .stSidebar span {
+            color: #1a1a1a !important;
+        }
+
+        /* Option menu (sidebar navigation) - force dark text */
+        .nav-link, .nav-link span, .nav-link i, .nav-link div {
+            color: #1a1a1a !important;
+        }
+        .nav-link-selected, .nav-link-selected span, .nav-link-selected i {
             color: #1B5E20 !important;
             font-weight: 700 !important;
         }
 
-        /* Body text - darker for better contrast */
-        p, li, span, div, label {
-            color: #1a1a1a !important;
+        /* Headers */
+        h1, h2, h3, h4, h5, h6 {
+            color: #1B5E20 !important;
+            font-weight: 700 !important;
         }
 
-        /* Cards - flat (no rounded corners) */
+        /* Cards */
         .card {
             background: white;
             padding: 1.5rem;
@@ -44,10 +52,6 @@ def apply_custom_css():
             transition: transform 0.2s ease;
             margin-bottom: 1rem;
             border-radius: 0 !important;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
         }
         .card-title {
             font-size: 1.1rem;
@@ -65,7 +69,7 @@ def apply_custom_css():
             font-size: 0.9rem;
         }
 
-        /* Metric cards - flat */
+        /* Metric cards */
         .metric-card {
             background: white;
             padding: 1.2rem;
@@ -90,7 +94,7 @@ def apply_custom_css():
             margin-bottom: 0.3rem;
         }
 
-        /* Buttons - flat */
+        /* Buttons */
         .stButton > button {
             background-color: #2E7D32 !important;
             color: white !important;
@@ -98,19 +102,13 @@ def apply_custom_css():
             border: none !important;
             padding: 0.6rem 1.8rem !important;
             font-weight: 500 !important;
-            transition: all 0.2s ease !important;
         }
         .stButton > button:hover {
             background-color: #1B5E20 !important;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(46,125,50,0.3) !important;
-        }
-        .stButton > button:disabled {
-            background-color: #a5d6a7 !important;
-            color: #555 !important;
         }
 
-        /* Expanders - flat */
+        /* Expanders */
         .streamlit-expanderHeader {
             background-color: #e8f5e9 !important;
             border-radius: 0 !important;
@@ -125,7 +123,7 @@ def apply_custom_css():
             padding: 1rem !important;
         }
 
-        /* Chat messages - flat */
+        /* Chat messages */
         .chat-message.bot {
             background: #e8f5e9;
             border-radius: 0 !important;
@@ -139,7 +137,7 @@ def apply_custom_css():
             padding: 0.8rem 1.2rem;
         }
 
-        /* Tags - flat */
+        /* Tags */
         .tag {
             display: inline-block;
             padding: 0.2rem 0.8rem;
@@ -165,7 +163,7 @@ def apply_custom_css():
             color: #4A148C !important;
         }
 
-        /* Recommendation result - flat */
+        /* Recommendation result */
         .result-card {
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             padding: 2rem;
@@ -199,12 +197,7 @@ def apply_custom_css():
             margin-top: 2rem;
         }
 
-        /* Sidebar text */
-        .css-1d391kg, .css-1d391kg p, .css-1d391kg div, .css-1d391kg span {
-            color: #1a1a1a !important;
-        }
-
-        /* Info/Warning/Success boxes - flat */
+        /* Alerts */
         .stAlert {
             border-radius: 0 !important;
         }
@@ -212,15 +205,16 @@ def apply_custom_css():
             color: #1a1a1a !important;
         }
 
-        /* Selectbox and input labels */
+        /* Input labels and values */
         .stSelectbox label, .stNumberInput label, .stTextInput label {
             color: #1a1a1a !important;
             font-weight: 500 !important;
         }
-
-        /* Selectbox dropdown - flat */
-        .stSelectbox > div > div {
-            border-radius: 0 !important;
+        .stSelectbox div, .stNumberInput div, .stTextInput div {
+            color: #1a1a1a !important;
+        }
+        input, select, textarea {
+            color: #1a1a1a !important;
         }
 
         /* Dataframe */
@@ -256,16 +250,6 @@ def apply_custom_css():
             font-weight: 500 !important;
         }
 
-        /* Number input - flat */
-        .stNumberInput > div > div > input {
-            border-radius: 0 !important;
-        }
-
-        /* Text input - flat */
-        .stTextInput > div > div > input {
-            border-radius: 0 !important;
-        }
-
         /* Code blocks */
         .stCodeBlock {
             background-color: #f0f4f0 !important;
@@ -275,6 +259,12 @@ def apply_custom_css():
         /* Horizontal rule */
         hr {
             border-color: #d0e0d0 !important;
+        }
+
+        /* Fix for option menu hover */
+        .nav-link:hover, .nav-link:hover span, .nav-link:hover i {
+            color: #1B5E20 !important;
+            background-color: #e8f5e9 !important;
         }
 
         @media (max-width: 768px) {
