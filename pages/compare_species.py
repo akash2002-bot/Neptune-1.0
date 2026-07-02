@@ -9,6 +9,14 @@ from data import SPECIES_DATA, SPECIES_NAMES, get_species_data
 from utils import display_pest_tags
 
 
+def hex_to_rgb(hex_color):
+    """Convert hex color to RGB tuple."""
+    hex_color = hex_color.lstrip('#')
+    if len(hex_color) == 6:
+        return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+    return (46, 125, 50)  # default green
+
+
 def render():
     st.markdown(
         """
@@ -135,13 +143,21 @@ def render():
         color_a = data_a.get("color", "#2E7D32")
         color_b = data_b.get("color", "#1565C0")
 
+        # Convert hex to RGB for rgba()
+        rgb_a = hex_to_rgb(color_a)
+        rgb_b = hex_to_rgb(color_b)
+
+        # Use rgba format with 25% opacity for fill
+        rgba_a = f"rgba({rgb_a[0]}, {rgb_a[1]}, {rgb_a[2]}, 0.25)"
+        rgba_b = f"rgba({rgb_b[0]}, {rgb_b[1]}, {rgb_b[2]}, 0.25)"
+
         fig.add_trace(go.Scatterpolar(
             r=[a_scores[c] for c in categories],
             theta=categories,
             fill='toself',
             name=species_a,
             line_color=color_a,
-            fillcolor=color_a + "40",  # Add 25% opacity
+            fillcolor=rgba_a,
         ))
 
         fig.add_trace(go.Scatterpolar(
@@ -150,7 +166,7 @@ def render():
             fill='toself',
             name=species_b,
             line_color=color_b,
-            fillcolor=color_b + "40",  # Add 25% opacity
+            fillcolor=rgba_b,
         ))
 
         fig.update_layout(
