@@ -12,7 +12,7 @@ import plotly.express as px
 
 
 def apply_custom_css():
-    """Apply custom CSS styling to the app with improved contrast."""
+    """Apply custom CSS styling with NO rounded corners (flat design)."""
     st.markdown(
         """
         <style>
@@ -24,7 +24,7 @@ def apply_custom_css():
             background-color: #f8faf8;
         }
 
-        /* Headers - improved contrast */
+        /* Headers */
         h1, h2, h3 {
             color: #1B5E20 !important;
             font-weight: 700 !important;
@@ -35,15 +35,15 @@ def apply_custom_css():
             color: #1a1a1a !important;
         }
 
-        /* Cards - better contrast */
+        /* Cards - flat (no rounded corners) */
         .card {
             background: white;
-            border-radius: 12px;
             padding: 1.5rem;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             border: 1px solid #d0e0d0;
             transition: transform 0.2s ease;
             margin-bottom: 1rem;
+            border-radius: 0 !important;
         }
         .card:hover {
             transform: translateY(-2px);
@@ -65,14 +65,14 @@ def apply_custom_css():
             font-size: 0.9rem;
         }
 
-        /* Metric cards - improved contrast */
+        /* Metric cards - flat */
         .metric-card {
             background: white;
-            border-radius: 10px;
             padding: 1.2rem;
             text-align: center;
             border: 1px solid #d0e0d0;
             box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            border-radius: 0 !important;
         }
         .metric-value {
             font-size: 1.8rem;
@@ -90,11 +90,11 @@ def apply_custom_css():
             margin-bottom: 0.3rem;
         }
 
-        /* Buttons */
+        /* Buttons - flat */
         .stButton > button {
             background-color: #2E7D32 !important;
             color: white !important;
-            border-radius: 8px !important;
+            border-radius: 0 !important;
             border: none !important;
             padding: 0.6rem 1.8rem !important;
             font-weight: 500 !important;
@@ -110,43 +110,43 @@ def apply_custom_css():
             color: #555 !important;
         }
 
-        /* Expanders - improved contrast */
+        /* Expanders - flat */
         .streamlit-expanderHeader {
             background-color: #e8f5e9 !important;
-            border-radius: 8px !important;
+            border-radius: 0 !important;
             font-weight: 600 !important;
             color: #1B5E20 !important;
         }
         .streamlit-expanderContent {
             background-color: white !important;
-            border-radius: 0 0 8px 8px !important;
+            border-radius: 0 !important;
             border: 1px solid #d0e0d0 !important;
             border-top: none !important;
             padding: 1rem !important;
         }
 
-        /* Chat messages - improved contrast */
+        /* Chat messages - flat */
         .chat-message.bot {
             background: #e8f5e9;
-            border-radius: 12px 12px 12px 4px;
+            border-radius: 0 !important;
             color: #0d1f0d !important;
             padding: 0.8rem 1.2rem;
         }
         .chat-message.user {
             background: #e3f2fd;
-            border-radius: 12px 12px 4px 12px;
+            border-radius: 0 !important;
             color: #0d1f3c !important;
             padding: 0.8rem 1.2rem;
         }
 
-        /* Tags - improved contrast */
+        /* Tags - flat */
         .tag {
             display: inline-block;
             padding: 0.2rem 0.8rem;
-            border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
             margin: 0.1rem;
+            border-radius: 0 !important;
         }
         .tag-green {
             background: #c8e6c9;
@@ -165,13 +165,13 @@ def apply_custom_css():
             color: #4A148C !important;
         }
 
-        /* Recommendation result - improved contrast */
+        /* Recommendation result - flat */
         .result-card {
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border-radius: 16px;
             padding: 2rem;
             border: 2px solid #2E7D32;
             margin: 1rem 0;
+            border-radius: 0 !important;
         }
         .result-species {
             font-size: 1.8rem;
@@ -199,26 +199,31 @@ def apply_custom_css():
             margin-top: 2rem;
         }
 
-        /* Sidebar text - improved contrast */
+        /* Sidebar text */
         .css-1d391kg, .css-1d391kg p, .css-1d391kg div, .css-1d391kg span {
             color: #1a1a1a !important;
         }
 
-        /* Info/Warning/Success boxes - improved contrast */
+        /* Info/Warning/Success boxes - flat */
         .stAlert {
-            border-radius: 8px !important;
+            border-radius: 0 !important;
         }
         .stAlert p {
             color: #1a1a1a !important;
         }
 
-        /* Selectbox and input labels - improved contrast */
+        /* Selectbox and input labels */
         .stSelectbox label, .stNumberInput label, .stTextInput label {
             color: #1a1a1a !important;
             font-weight: 500 !important;
         }
 
-        /* Dataframe - improved contrast */
+        /* Selectbox dropdown - flat */
+        .stSelectbox > div > div {
+            border-radius: 0 !important;
+        }
+
+        /* Dataframe */
         .dataframe {
             color: #1a1a1a !important;
         }
@@ -231,7 +236,7 @@ def apply_custom_css():
             color: #1a1a1a !important;
         }
 
-        /* Tabs - improved contrast */
+        /* Tabs */
         .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
             color: #1a1a1a !important;
             font-weight: 500 !important;
@@ -241,7 +246,7 @@ def apply_custom_css():
             border-bottom: 3px solid #2E7D32 !important;
         }
 
-        /* Metrics - improved contrast */
+        /* Metrics */
         [data-testid="stMetricValue"] {
             color: #1B5E20 !important;
             font-weight: 700 !important;
@@ -251,7 +256,17 @@ def apply_custom_css():
             font-weight: 500 !important;
         }
 
-        /* Code blocks - improved contrast */
+        /* Number input - flat */
+        .stNumberInput > div > div > input {
+            border-radius: 0 !important;
+        }
+
+        /* Text input - flat */
+        .stTextInput > div > div > input {
+            border-radius: 0 !important;
+        }
+
+        /* Code blocks */
         .stCodeBlock {
             background-color: #f0f4f0 !important;
             color: #1a1a1a !important;
