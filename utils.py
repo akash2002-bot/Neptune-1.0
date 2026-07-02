@@ -12,7 +12,7 @@ import plotly.express as px
 
 
 def apply_custom_css():
-    """Apply custom CSS styling to the app."""
+    """Apply custom CSS styling to the app with improved contrast."""
     st.markdown(
         """
         <style>
@@ -24,60 +24,66 @@ def apply_custom_css():
             background-color: #f8faf8;
         }
 
-        /* Headers */
+        /* Headers - improved contrast */
         h1, h2, h3 {
             color: #1B5E20 !important;
-            font-weight: 600 !important;
+            font-weight: 700 !important;
         }
 
-        /* Cards */
+        /* Body text - darker for better contrast */
+        p, li, span, div, label {
+            color: #1a1a1a !important;
+        }
+
+        /* Cards - better contrast */
         .card {
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border: 1px solid #e8f0e8;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border: 1px solid #d0e0d0;
             transition: transform 0.2s ease;
             margin-bottom: 1rem;
         }
         .card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
         }
         .card-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #1B5E20;
+            color: #1B5E20 !important;
             margin-bottom: 0.5rem;
         }
         .card-value {
             font-size: 2rem;
             font-weight: 700;
-            color: #2E7D32;
+            color: #2E7D32 !important;
         }
         .card-subtitle {
-            color: #666;
+            color: #444 !important;
             font-size: 0.9rem;
         }
 
-        /* Metric cards */
+        /* Metric cards - improved contrast */
         .metric-card {
             background: white;
             border-radius: 10px;
             padding: 1.2rem;
             text-align: center;
-            border: 1px solid #e8f0e8;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            border: 1px solid #d0e0d0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
         }
         .metric-value {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1B5E20;
+            color: #1B5E20 !important;
         }
         .metric-label {
-            color: #666;
+            color: #333 !important;
             font-size: 0.85rem;
             margin-top: 0.2rem;
+            font-weight: 500;
         }
         .metric-icon {
             font-size: 1.8rem;
@@ -99,121 +105,69 @@ def apply_custom_css():
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(46,125,50,0.3) !important;
         }
-
-        /* Secondary button */
-        .stButton > button.secondary {
-            background-color: #e8f5e9 !important;
-            color: #1B5E20 !important;
-        }
-        .stButton > button.secondary:hover {
-            background-color: #c8e6c9 !important;
+        .stButton > button:disabled {
+            background-color: #a5d6a7 !important;
+            color: #555 !important;
         }
 
-        /* Sidebar */
-        .css-1d391kg {
-            background-color: #f8faf8 !important;
-        }
-
-        /* Expanders */
+        /* Expanders - improved contrast */
         .streamlit-expanderHeader {
-            background-color: #f0f7f0 !important;
+            background-color: #e8f5e9 !important;
             border-radius: 8px !important;
-            font-weight: 500 !important;
+            font-weight: 600 !important;
             color: #1B5E20 !important;
         }
         .streamlit-expanderContent {
             background-color: white !important;
             border-radius: 0 0 8px 8px !important;
-            border: 1px solid #e8f0e8 !important;
+            border: 1px solid #d0e0d0 !important;
             border-top: none !important;
+            padding: 1rem !important;
         }
 
-        /* Progress bars */
-        .stProgress > div > div {
-            background-color: #2E7D32 !important;
-            border-radius: 10px !important;
-        }
-
-        /* Chat */
-        .chat-bot {
-            background: #e8f5e9;
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px 12px 12px 4px;
-            margin: 0.4rem 0;
-            max-width: 85%;
-            display: inline-block;
-        }
-        .chat-user {
-            background: #e3f2fd;
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px 12px 4px 12px;
-            margin: 0.4rem 0;
-            max-width: 85%;
-            display: inline-block;
-            float: right;
-        }
-        .chat-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-        .chat-row {
-            display: flex;
-            width: 100%;
-        }
-        .chat-row.bot {
-            justify-content: flex-start;
-        }
-        .chat-row.user {
-            justify-content: flex-end;
-        }
-        .chat-message {
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px;
-            max-width: 80%;
-            word-wrap: break-word;
-            line-height: 1.5;
-        }
+        /* Chat messages - improved contrast */
         .chat-message.bot {
             background: #e8f5e9;
             border-radius: 12px 12px 12px 4px;
-            color: #1B3A1B;
+            color: #0d1f0d !important;
+            padding: 0.8rem 1.2rem;
         }
         .chat-message.user {
             background: #e3f2fd;
             border-radius: 12px 12px 4px 12px;
-            color: #0D1F3C;
+            color: #0d1f3c !important;
+            padding: 0.8rem 1.2rem;
         }
 
-        /* Tags */
+        /* Tags - improved contrast */
         .tag {
             display: inline-block;
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 500;
+            font-weight: 600;
             margin: 0.1rem;
         }
         .tag-green {
-            background: #e8f5e9;
-            color: #1B5E20;
+            background: #c8e6c9;
+            color: #1B5E20 !important;
         }
         .tag-blue {
-            background: #e3f2fd;
-            color: #0D47A1;
+            background: #bbdefb;
+            color: #0D47A1 !important;
         }
         .tag-orange {
-            background: #fff3e0;
-            color: #E65100;
+            background: #ffe0b2;
+            color: #BF360C !important;
         }
         .tag-purple {
-            background: #f3e5f5;
-            color: #4A148C;
+            background: #e1bee7;
+            color: #4A148C !important;
         }
 
-        /* Recommendation result */
+        /* Recommendation result - improved contrast */
         .result-card {
-            background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e9 100%);
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 16px;
             padding: 2rem;
             border: 2px solid #2E7D32;
@@ -222,30 +176,92 @@ def apply_custom_css():
         .result-species {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1B5E20;
+            color: #1B5E20 !important;
         }
         .result-score {
             font-size: 3rem;
             font-weight: 800;
-            color: #2E7D32;
+            color: #2E7D32 !important;
         }
         .result-confidence {
             font-size: 1.4rem;
             font-weight: 600;
-            color: #1565C0;
+            color: #0D47A1 !important;
         }
 
         /* Footer */
         .footer {
             text-align: center;
             padding: 2rem 0 1rem 0;
-            color: #888;
+            color: #555 !important;
             font-size: 0.8rem;
-            border-top: 1px solid #e8f0e8;
+            border-top: 1px solid #d0e0d0;
             margin-top: 2rem;
         }
 
-        /* Responsive */
+        /* Sidebar text - improved contrast */
+        .css-1d391kg, .css-1d391kg p, .css-1d391kg div, .css-1d391kg span {
+            color: #1a1a1a !important;
+        }
+
+        /* Info/Warning/Success boxes - improved contrast */
+        .stAlert {
+            border-radius: 8px !important;
+        }
+        .stAlert p {
+            color: #1a1a1a !important;
+        }
+
+        /* Selectbox and input labels - improved contrast */
+        .stSelectbox label, .stNumberInput label, .stTextInput label {
+            color: #1a1a1a !important;
+            font-weight: 500 !important;
+        }
+
+        /* Dataframe - improved contrast */
+        .dataframe {
+            color: #1a1a1a !important;
+        }
+        .dataframe th {
+            background-color: #e8f5e9 !important;
+            color: #1B5E20 !important;
+            font-weight: 600 !important;
+        }
+        .dataframe td {
+            color: #1a1a1a !important;
+        }
+
+        /* Tabs - improved contrast */
+        .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+            color: #1a1a1a !important;
+            font-weight: 500 !important;
+        }
+        .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+            background-color: #e8f5e9 !important;
+            border-bottom: 3px solid #2E7D32 !important;
+        }
+
+        /* Metrics - improved contrast */
+        [data-testid="stMetricValue"] {
+            color: #1B5E20 !important;
+            font-weight: 700 !important;
+        }
+        [data-testid="stMetricLabel"] {
+            color: #333 !important;
+            font-weight: 500 !important;
+        }
+
+        /* Code blocks - improved contrast */
+        .stCodeBlock {
+            background-color: #f0f4f0 !important;
+            color: #1a1a1a !important;
+        }
+
+        /* Horizontal rule */
+        hr {
+            border-color: #d0e0d0 !important;
+        }
+
         @media (max-width: 768px) {
             .card-value {
                 font-size: 1.5rem;
