@@ -1,6 +1,6 @@
 # chatbot.py
 """
-NemaIQ - Chatbot Module
+Neptune 1.0 - Chatbot Module
 Rule-based conversational agent for EPN recommendations.
 """
 
@@ -34,7 +34,7 @@ class ChatbotEngine:
     def get_next_question(self):
         """Get the next question based on current state."""
         if self.state == "INITIAL":
-            return "Hello! I'm NemaIQ, your EPN advisor. 🌱\n\nWhat pest are you dealing with? Please tell me the name of the pest you're facing."
+            return "Hello! I'm Neptune 1.0, your EPN advisor. 🌱\n\nWhat pest are you dealing with? Please tell me the name of the pest you're facing."
         elif self.state == "ASK_SOIL":
             return f"What type of soil do you have? (e.g., {', '.join(SOIL_TYPES[:4])}...)"
         elif self.state == "ASK_PH":
@@ -246,7 +246,7 @@ class ChatbotEngine:
 def get_initial_bot_message():
     """Get the initial bot greeting message."""
     return (
-        "👋 Hello! I'm NemaIQ, your intelligent EPN advisor.\n\n"
+        "👋 Hello! I'm Neptune 1.0, your intelligent EPN advisor.\n\n"
         "I can help you find the best entomopathogenic nematode species for your pest problem.\n\n"
         "**Just tell me:**\n"
         "• What pest you're dealing with\n"
