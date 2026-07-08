@@ -1,5 +1,5 @@
 """
-NemaIQ - Compare Species Page
+Neptune 1.0 - Compare Species Page
 """
 
 import streamlit as st
@@ -210,7 +210,7 @@ def render():
     st.markdown(
         """
         <div class="footer">
-            NemaIQ v1.0 — Research-based Decision Support System
+            Neptune 1.0 v1.0 — Research-based Decision Support System
         </div>
         """,
         unsafe_allow_html=True,
