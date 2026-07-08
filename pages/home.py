@@ -1,6 +1,6 @@
 # pages/home.py
 """
-NemaIQ - Home Page
+Neptune 1.0 - Home Page
 """
 
 import streamlit as st
@@ -12,7 +12,7 @@ def render():
     st.markdown(
         """
         <div style="text-align: center; padding: 1rem 0 0.5rem 0;">
-            <h1 style="font-size: 3rem; color: #1B5E20; margin: 0;">🌱 NemaIQ</h1>
+            <h1 style="font-size: 3rem; color: #1B5E20; margin: 0;">🌱 Neptune 1.0</h1>
             <p style="font-size: 1.2rem; color: #444; margin: 0.2rem 0 0 0;">
                 Intelligent Entomopathogenic Nematode Recommendation System
             </p>
@@ -111,9 +111,9 @@ def render():
             st.rerun()
 
     # Quick info
-    with st.expander("ℹ️ How does NemaIQ work?"):
+    with st.expander("ℹ️ How does Neptune 1.0 work?"):
         st.markdown("""
-        **NemaIQ** is an intelligent decision-support system for Entomopathogenic Nematode (EPN) selection.
+        **Neptune 1.0** is an intelligent decision-support system for Entomopathogenic Nematode (EPN) selection.
 
         1. **Select your pest** — Tell us which pest you're dealing with
         2. **Provide soil information** — Share what you know about your soil conditions
@@ -126,7 +126,7 @@ def render():
     st.markdown(
         """
         <div class="footer">
-            NemaIQ v1.0 — Research-based Decision Support System
+            Neptune 1.0 v1.0 — Research-based Decision Support System
         </div>
         """,
         unsafe_allow_html=True,
