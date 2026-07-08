@@ -1,6 +1,6 @@
 # pages/about_research.py
 """
-NemaIQ - About Research Page
+Neptune 1.0 - About Research Page
 Research background and disclaimer.
 """
 
@@ -15,7 +15,7 @@ def render():
         <div style="margin-bottom: 1rem;">
             <h1 style="color: #1B5E20;">📖 About Research</h1>
             <p style="color: #555; font-size: 1rem;">
-                Understanding the research foundation behind NemaIQ's recommendations.
+                Understanding the research foundation behind Neptune 1.0's recommendations.
             </p>
         </div>
         """,
@@ -27,7 +27,7 @@ def render():
 
     st.markdown(
         """
-        NemaIQ is built upon extensive research on Entomopathogenic Nematodes (EPNs) and their 
+        Neptune 1.0 is built upon extensive research on Entomopathogenic Nematodes (EPNs) and their 
         effectiveness against various agricultural pests. The recommendation engine uses 
         peer-reviewed data on EPN environmental preferences and host ranges.
 
@@ -43,7 +43,7 @@ def render():
     # Data Sources
     with st.expander("📚 Research Data Sources"):
         st.markdown("""
-        The data in NemaIQ is compiled from:
+        The data in Neptune 1.0 is compiled from:
 
         1. **Peer-reviewed journal articles** on EPN biology and application
         2. **Agricultural extension publications** from research institutions
@@ -90,7 +90,7 @@ def render():
     st.markdown("### ⚖️ Recommendation Methodology")
 
     st.markdown("""
-    The NemaIQ recommendation engine uses a **weighted scoring system**:
+    The Neptune 1.0 recommendation engine uses a **weighted scoring system**:
 
     | Factor | Weight | Description |
     |--------|--------|-------------|
@@ -135,7 +135,7 @@ def render():
     # Research Contributors
     with st.expander("👨‍🔬 Research Contributors"):
         st.markdown("""
-        NemaIQ is developed based on research from:
+        Neptune 1.0 is developed based on research from:
 
         - **Agricultural Research Institutions** studying EPN biology and application
         - **Universities** conducting field trials and laboratory studies
@@ -149,7 +149,7 @@ def render():
     st.markdown(
         """
         <div style="text-align: center; color: #888; font-size: 0.85rem;">
-            NemaIQ v1.0 — Built with Streamlit<br>
+            Neptune 1.0 v1.0 — Built with Streamlit<br>
             Research-based EPN Recommendation System
         </div>
         """,
@@ -160,7 +160,7 @@ def render():
     st.markdown(
         """
         <div class="footer">
-            NemaIQ v1.0 — Research-based Decision Support System
+            Neptune 1.0 v1.0 — Research-based Decision Support System
         </div>
         """,
         unsafe_allow_html=True,
