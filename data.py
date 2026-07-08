@@ -1,6 +1,6 @@
 # data.py
 """
-NemaIQ - Data Module
+Neptune 1.0 - Data Module
 Contains research data for 5 EPN species based on the research document.
 """
 
