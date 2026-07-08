@@ -1,6 +1,6 @@
 # pages/nemagpt.py
 """
-NemaIQ - NemaGPT Page
+Neptune 1.0 - NemaGPT Page
 Rule-based chatbot for guided EPN recommendations.
 """
 
@@ -157,7 +157,7 @@ def render():
     st.markdown(
         """
         <div class="footer">
-            NemaIQ v1.0 — Research-based Decision Support System
+            Neptune 1.0 v1.0 — Research-based Decision Support System
         </div>
         """,
         unsafe_allow_html=True,
