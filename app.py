@@ -1,6 +1,6 @@
 # app.py
 """
-NemaIQ - Intelligent Entomopathogenic Nematode Recommendation System
+Neptune 1.0 - Intelligent Entomopathogenic Nematode Recommendation System
 Main application entry point.
 """
 
@@ -39,7 +39,7 @@ from utils import (
 
 # Page configuration
 st.set_page_config(
-    page_title="NemaIQ - EPN Recommendation System",
+    page_title="Neptune 1.0 - EPN Recommendation System",
     page_icon="🌱",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -78,7 +78,7 @@ with st.sidebar:
     st.markdown(
         """
         <div style="text-align: center; margin-bottom: 20px;">
-            <h2 style="color: #2E7D32; margin: 0;">🌱 NemaIQ</h2>
+            <h2 style="color: #2E7D32; margin: 0;">🌱 Neptune 1.0</h2>
             <p style="color: #555; font-size: 0.85rem; margin: 0;">
                 Intelligent EPN Recommendation
             </p>
@@ -133,7 +133,7 @@ with st.sidebar:
         """
         <hr style="margin: 20px 0 10px 0; border-color: #ddd;">
         <div style="text-align: center; font-size: 0.75rem; color: #888;">
-            <p>NemaIQ v1.0</p>
+            <p>Neptune 1.0 v1.0</p>
             <p>🧪 Research-based Decision Support</p>
         </div>
         """,
