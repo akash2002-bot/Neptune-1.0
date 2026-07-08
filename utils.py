@@ -1,6 +1,6 @@
 # utils.py
 """
-NemaIQ - Utility Functions
+Neptune 1.0 - Utility Functions
 Helper functions for UI components and styling.
 """
 
