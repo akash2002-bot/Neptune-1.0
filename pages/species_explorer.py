@@ -1,6 +1,6 @@
 # pages/species_explorer.py
 """
-NemaIQ - Species Explorer Page
+Neptune 1.0 - Species Explorer Page
 Detailed information about each EPN species.
 """
 
@@ -17,7 +17,7 @@ def render():
             <h1 style="color: #1B5E20;">🧬 Species Explorer</h1>
             <p style="color: #555; font-size: 1rem;">
                 Explore detailed information about each Entomopathogenic Nematode (EPN) species
-                available in the NemaIQ recommendation system.
+                available in the Neptune 1.0 recommendation system.
             </p>
         </div>
         """,
@@ -227,7 +227,7 @@ def render():
     st.markdown(
         """
         <div class="footer">
-            NemaIQ v1.0 — Research-based Decision Support System
+            Neptune 1.0 v1.0 — Research-based Decision Support System
         </div>
         """,
         unsafe_allow_html=True,
