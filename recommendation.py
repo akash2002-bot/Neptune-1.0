@@ -1,6 +1,6 @@
 # recommendation.py
 """
-NemaIQ - Recommendation Engine
+Neptune 1.0 - Recommendation Engine
 Implements weighted scoring for EPN species selection.
 """
 
