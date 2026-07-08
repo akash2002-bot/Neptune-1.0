@@ -1,6 +1,6 @@
 # pages/find_my_nematode.py
 """
-NemaIQ - Find My Nematode Page
+Neptune 1.0 - Find My Nematode Page
 Recommendation engine with partial information support.
 """
 
@@ -280,7 +280,7 @@ def render():
     st.markdown(
         """
         <div class="footer">
-            NemaIQ v1.0 — Research-based Decision Support System
+            Neptune 1.0 v1.0 — Research-based Decision Support System
         </div>
         """,
         unsafe_allow_html=True,
